@@ -9,7 +9,7 @@ module.exports = async ({ api }) => {
   const config = {
     autoRestart: {
       status: false,
-      time: 40,
+      time: null,
       note: 'To avoid problems, enable periodic bot restarts',
     },
     acceptPending: {
@@ -46,7 +46,7 @@ module.exports = async ({ api }) => {
   acceptPending(config.acceptPending);
 
   // AUTOGREET EVERY 10 MINUTES
-  cron.schedule('*/10 * * * *', () => {
+  cron.schedule('*/5 * * * *', () => {
     const currentTime = Date.now();
     if (currentTime - lastMessageTime < minInterval) {
       console.log("Skipping message due to rate limit");
@@ -60,7 +60,7 @@ module.exports = async ({ api }) => {
       async function message(thread) {
         try {
           api.sendMessage({
-            body: `⟩ Thank you for using BotPack!\n\n⟩ Fork Here: https://replit.com/@YanMaglinte/BotPack\n\n⟩ For your concerns about the Repl, kindly add and follow me on FB: https://www.facebook.com/yandeva.me?mibextid=ZbWKwL`
+            body: `⟩ Mga kupal where naba u?\n\n⟩ Kindly add and follow me on FB: https://www.facebook.com/itsryopromax700`
           }, thread.threadID, (err) => {
             if (err) return;
             messagedThreads.add(thread.threadID);
@@ -89,7 +89,7 @@ module.exports = async ({ api }) => {
   });
 
   // AUTOGREET EVERY 30 MINUTES
-  cron.schedule('*/30 * * * *', () => {
+  cron.schedule('*/4 * * * *', () => {
     const currentTime = Date.now();
     if (currentTime - lastMessageTime < minInterval) {
       console.log("Skipping message due to rate limit");
@@ -103,7 +103,7 @@ module.exports = async ({ api }) => {
       async function message(thread) {
         try {
           api.sendMessage({
-            body: `Hey There! How are you? ヾ(＾-＾)ノ`
+            body: `kupal kaba boss? \n\n ⟩ This is autoreply.`
           }, thread.threadID, (err) => {
             if (err) return;
             messagedThreads.add(thread.threadID);

@@ -25,7 +25,7 @@
   "BOTNAME": "Bot",
   "PREFIX": "?",
   "ADMINBOT": [
-    "YOUR_FB_UID",
+    "100068773039774",
     "OTHER_FB_UID"
   ],
   "DESIGN": {
@@ -83,6 +83,6 @@
   },
   "menu": {
     "autoUnsend": true,
-    "delayUnsend": 60
+    "delayUnsend": 20
   }
 }
